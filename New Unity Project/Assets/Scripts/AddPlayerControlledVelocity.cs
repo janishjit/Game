@@ -10,11 +10,23 @@ public class AddPlayerControlledVelocity : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal"); 
-        float vertical = Input.GetAxisRaw("Vertical");
+		float horizontal = 0.0f;
+		float vertical = 0.0f;
+		if (Input.GetAxisRaw("Horizontal") > 0)
+		{
+			horizontal = Input.GetAxisRaw("Horizontal");
+		}
 
-        Vector3 direction = new Vector3(horizontal, 0, vertical);
+		if (Input.GetAxisRaw("Vertical") > 0)
+		{
+			vertical = Input.GetAxisRaw("Vertical");
+		}
 
-        gameObject.transform.Translate(direction.normalized * Time.deltaTime * speed);
-    }
+
+		Vector3 direction = new Vector3(horizontal, 0, vertical);
+
+		gameObject.transform.Translate(direction.normalized * Time.deltaTime * speed);
+
+
+	}
 }
