@@ -15,7 +15,7 @@ public class ObstacleSpawner : MonoBehaviour
     void Update()
     {
         if(timer > spawnTime){ 
-            int rand = Random.Range(0, obstaclePrefab.Length);
+            int rand = UnityEngine.Random.Range(0, obstaclePrefab.Length);
 
             GameObject obs = Instantiate(obstaclePrefab[rand]);
             obs.transform.position = transform.position + new Vector3(0, 0, 0);
