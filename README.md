@@ -1,2 +1,2 @@
 # Game
-Unity 3D game development attempt
+Unity 3D game
